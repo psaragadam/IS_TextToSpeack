@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.is</groupId>
-	<artifactId>textToSpeack</artifactId>
+	<artifactId>textToSpeech</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>textToSpeack</name>
+	<name>textToSpeech</name>
 	<description>Application for TTS process</description>
 
 	<properties>
