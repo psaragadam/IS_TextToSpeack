@@ -14,7 +14,7 @@ Build code
 To execute API, Please execute following curl url:
 
 curl -X POST \
-  http://localhost:8080/tts/audio \
+  http://${HOST}/tts/audio \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \
   -H 'postman-token: 83bfd2a0-79c9-f93d-9527-e1e89a3744fa' \
