@@ -11,16 +11,27 @@ import javax.speech.synthesis.Synthesizer;
 import javax.speech.synthesis.SynthesizerModeDesc;
 import javax.speech.synthesis.Voice;
 
+import org.springframework.stereotype.Component;
+
 /**
  *
- * @author Manindar
+ * @author psaragadam 
  */
+@Component
 public class SpeechUtils {
 
     SynthesizerModeDesc desc;
     Synthesizer synthesizer;
     Voice voice;
 
+    public SpeechUtils() {
+    	try {
+			init("kevin");
+		} catch (EngineException | AudioException | EngineStateError | PropertyVetoException e) {
+			e.printStackTrace();
+		}
+	}
+    
     public void init(String voiceName) throws EngineException, AudioException, EngineStateError, PropertyVetoException {
         if (desc == null) {
             System.setProperty("freetts.voices", "com.sun.speech.freetts.en.us.cmu_us_kal.KevinVoiceDirectory");
@@ -52,13 +63,7 @@ public class SpeechUtils {
 
     public static void main(String[] args) throws Exception {
         SpeechUtils su = new SpeechUtils();
- //       su.init("kevin16");
-          su.init("kevin");
-//        su.init("mbrola_us1");
-//        su.init("mbrola_us2");
-//        su.init("mbrola_us3");
-        // high quality
         su.doSpeak("Welcome to audio world.");
-        su.terminate();
+        
     }
 }
